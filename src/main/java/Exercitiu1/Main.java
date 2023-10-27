@@ -36,8 +36,6 @@ public class Main {
     public static void main(String[] args) {
         List<PerecheNumere> perechi = new ArrayList<>();
         perechi = citire();
-        perechi.add(new PerecheNumere(1, 3));
-        perechi.add(new PerecheNumere(2, 4));
         scriere(perechi);
     }
 }

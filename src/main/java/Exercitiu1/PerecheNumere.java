@@ -1,6 +1,5 @@
 package Exercitiu1;
 
-import java.util.function.Supplier;
 
 public class PerecheNumere {
     private int num1;
@@ -32,14 +31,15 @@ public class PerecheNumere {
     }
 
     public boolean Fibonacci(int a, int b){
-        int c = a + b, sum = 2, n1 = 1, n2 = 1;
-        while(sum <= c){
-           sum = n1 + n2;
-           n1 = n2;
-           n2 = sum;
+        int c = a + b;
+        int n1 = 1;
+        int n2 = 1;
+        while(n1 + n2 <= c){
+           n2 += n1;
+           n1 ^=n2;
+           n2 = n1 ^n2;
+           n1 ^=n2;
         }
-        if(sum == c)
-            return true;
-        return false;
+        return n1 == c;
     }
 }
